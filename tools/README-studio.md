@@ -1,5 +1,6 @@
 # Studio @reyzinhoia — comment fabriquer une vidéo
 
+0. **Avant tout** : lire `tools/GUIDE-TIKTOK.md` (règles de croissance : accroche, fin, mot-clé, séries).
 1. **Voix** (gratuit, GitHub Actions) : écrire `voix/jobs/<id-video>.json`
    `{"reference": "voix/hugo-ref.wav", "langue": "fr", "exaggeration": 0.75, "cfg": 0.4, "segments": ["texte écran 0", "texte écran 1", ...]}`
    puis commit + push. L'action « Voix Chatterbox » crée `voix/out/<id-video>/seg0.wav`, `seg1.wav`… (3 à 6 min), puis `git pull`.
