@@ -1,0 +1,59 @@
+{
+ "genere_le": "2026-10-26 22:08 UTC",
+ "prix": {
+  "SPY": {
+   "yahoo": {
+    "date": "2026-10-26",
+    "prix": 765.369995
+   },
+   "stooq": {
+    "erreur": "HTTP Error 404: Not Found"
+   }
+  },
+  "QQQ": {
+   "yahoo": {
+    "date": "2026-10-26",
+    "prix": 712.200012
+   },
+   "stooq": {
+    "erreur": "HTTP Error 404: Not Found"
+   }
+  },
+  "VGK": {
+   "yahoo": {
+    "date": "2026-10-26",
+    "prix": 86.550003
+   },
+   "stooq": {
+    "erreur": "HTTP Error 404: Not Found"
+   }
+  },
+  "EWQ": {
+   "yahoo": {
+    "date": "2026-10-26",
+    "prix": 41.509998
+   },
+   "stooq": {
+    "erreur": "HTTP Error 404: Not Found"
+   }
+  },
+  "EEM": {
+   "yahoo": {
+    "date": "2026-10-26",
+    "prix": 61.82
+   },
+   "stooq": {
+    "erreur": "HTTP Error 404: Not Found"
+   }
+  },
+  "EURUSD": {
+   "yahoo": {
+    "date": "2026-10-26",
+    "prix": 1.117568
+   },
+   "stooq": {
+    "erreur": "HTTP Error 404: Not Found"
+   }
+  }
+ }
+}
