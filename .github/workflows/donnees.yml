@@ -1,0 +1,25 @@
+name: Données marchés (Parquet PEA)
+on:
+  push:
+    paths: ["parquet-pea/telecharger.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: donnees
+jobs:
+  donnees:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet yfinance pandas
+      - run: python parquet-pea/telecharger.py
+      - run: |
+          git config user.name "parquet-donnees"
+          git config user.email "parquet-donnees@users.noreply.github.com"
+          git add parquet-pea/data
+          git commit -m "Données marchés mensuelles" || echo rien
+          git pull --rebase -q && git push
