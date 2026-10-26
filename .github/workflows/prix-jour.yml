@@ -1,0 +1,23 @@
+name: Prix du jour (Tour PEA)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: prix-jour
+jobs:
+  prix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet yfinance pandas
+      - run: python parquet-pea/prix_jour.py
+      - run: |
+          git config user.name "parquet-donnees"
+          git config user.email "parquet-donnees@users.noreply.github.com"
+          git add parquet-pea/data/prix_jour.json
+          git commit -m "Prix du jour (Tour PEA)" || echo rien
+          git pull --rebase -q && git push
