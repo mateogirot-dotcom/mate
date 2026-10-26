@@ -7,6 +7,8 @@ parquet-pea/data/*.csv (converti en euros) + le prix du jour.
 """
 import json, sys, os, math
 import pandas as pd
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import strategie_pea
 ROOT = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(ROOT, "data") + "/"
 MAP = {"SP500": ("SPY", "sp500_usd", "Fonds PEA S&P 500"), "NASDAQ": ("QQQ", "nasdaq100_usd", "Fonds PEA Nasdaq-100"),
        "EUROPE": ("VGK", "europe_usd", "Fonds PEA Europe"), "FRANCE": ("EWQ", "france_usd", "Fonds PEA CAC 40 / France"),
@@ -25,6 +27,7 @@ vol = p.pct_change().iloc[-12:].std()
 
 def cible(style, agent):
     s = agent.setdefault("etat", {})
+    if style == "evolue": return strategie_pea.cible(agent["genome"], p, s, agent.get("valeur", agent["depart"]), agent.get("pic", agent["depart"]))
     if style == "paresseux": return {"SP500": 1.0}
     if style == "prudent": return {"SP500": .30, "EUROPE": .18, "EMERGENTS": .12}
     if style in ("tortue", "vigilante"):
@@ -60,7 +63,8 @@ RAISON = {"paresseux": "Témoin : tout sur le S&P 500, il ne bouge jamais.", "pr
           "fusee": "Prend les 2 fonds qui ont le plus monté sur 12 mois (s'ils sont en hausse).",
           "chineur": "Prend les 2 fonds les plus en baisse par rapport à leur plus haut sur 12 mois.",
           "vigilante": "Comme la Tortue, mais se met à l'abri après une chute de 15 % et revient quand le S&P 500 repasse au-dessus de sa moyenne.",
-          "equilibriste": "Met plus d'argent sur les fonds qui bougent le moins (12 derniers mois), 50 % maximum par fonds."}
+          "equilibriste": "Met plus d'argent sur les fonds qui bougent le moins (12 derniers mois), 50 % maximum par fonds.",
+          "evolue": "Applique les règles apprises en 200 générations de simulation (voir ses règles)."}
 resume = []
 for a in pf:
     st = a["style_code"]; first = not a.get("positions") and not a.get("historique")
@@ -78,6 +82,11 @@ for a in pf:
         w = cible(st, a)
         if a.get("plafond", True): w = {k: min(v, CAP) for k, v in w.items()}
         w = {k: v for k, v in w.items() if k in ok and v > 0}
+        if st == "evolue" and not first and val > 0:      # ne bouge que si l'écart dépasse sa marge
+            held0 = {x["code"]: x["quantite"]*prix.get(x["code"], x["dernier_prix"])/val for x in a.get("positions", [])}
+            if max([abs(w.get(k, 0) - held0.get(k, 0)) for k in MAP] or [0]) <= a["genome"]["band"]: w = None
+        if w is None: agir = False
+    if agir:
         base = val*(1-FEE*sum(w.values())); target = {k: base*w.get(k, 0) for k in MAP}
         held = {x["code"]: x for x in a.get("positions", [])}
         for k in MAP:
