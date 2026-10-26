@@ -1,0 +1,8 @@
+SPY yahoo 406 mois 1993-01-31 -> 2026-10-31
+QQQ yahoo 332 mois 1999-03-31 -> 2026-10-31
+VGK yahoo 260 mois 2005-03-31 -> 2026-10-31
+EWQ yahoo 368 mois 1996-03-31 -> 2026-10-31
+EEM yahoo 283 mois 2003-04-30 -> 2026-10-31
+ACWI yahoo 224 mois 2008-03-31 -> 2026-10-31
+EURUSD=X yahoo 275 mois 2003-12-31 -> 2026-10-31
+eurusd stooq ERREUR HTTP Error 404: Not Found
