@@ -1,158 +1,149 @@
-"""Décors « attractifs » du Studio @reyzinhoia (demande de l'utilisateur du 26 oct. 2026).
-Fabrique des écrans PNG 1080x1920 prêts pour tools/assembler.py.
+"""Décors du Studio @reyzinhoia — style « Archive lumineuse » (voir tools/PHILOSOPHIE-DECOR.md).
+Méthode « canvas-design » demandée par l'utilisateur le 26 oct. 2026. Écrans PNG 1080x1920 pour tools/assembler.py.
 
-from decor import ecran
-ecran("question", "Un commerçant peut refuser tes {pièces} ?", "q.png", compteur="1/5", icone="🪙")
-Types : "question", "decompte" (texte = "3"/"2"/"1"), "vrai", "faux", "explication", "fin", "chiffre".
-Mettre un mot entre {accolades} le surligne en jaune (le MOT-CLÉ de recherche, à faire dès le 1er écran).
-icone : un petit dessin simple facultatif parmi ICONES (dessiné en formes, aucune marque).
-Polices libres (licence OFL) dans fonts/ : Anton (titres), Montserrat (texte).
-INTERDIT dans le décor : logo, marque, badge IA, « Voix de synthèse », écran Sources, « n°X » en haut.
+    import sys; sys.path.insert(0, "tools"); from decor import ecran
+    ecran("question", "Un {commerçant} peut-il refuser tes pièces ?", "q.png", icone="piece", compteur="1/5")
+
+Types : "question", "decompte" ("3"/"2"/"1"), "vrai", "faux", "explication", "chiffre" ("GROS|phrase"), "fin".
+{accolades} = MOT-CLÉ surligné en jaune. Icônes : piece, carte, cheque, billet, cerveau, os, globe, horloge, ampoule, livre.
+Polices libres (OFL) dans fonts/. INTERDIT : logo, marque, badge IA, « Voix de synthèse », écran Sources, « n°X » en haut.
 """
 import os, math, random, re
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageChops
 W, H = 1080, 1920
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ANTON = os.path.join(ROOT, "fonts", "Anton-Regular.ttf")
-MONT = os.path.join(ROOT, "fonts", "Montserrat-VF.ttf")
-PAL = {  # dégradé haut -> bas, couleur des bulles, accent
-  "question":    ("#2b2d8f", "#7b2ff7", "#ffd23f"),
-  "decompte":    ("#14163d", "#3a1c71", "#ffd23f"),
-  "vrai":        ("#0f9d58", "#00c9a7", "#ffffff"),
-  "faux":        ("#e5484d", "#ff8a3d", "#ffffff"),
-  "explication": ("#5b2a86", "#d6457e", "#ffd23f"),
-  "chiffre":     ("#0b4f9c", "#1fa2ff", "#ffd23f"),
-  "fin":         ("#ff7a18", "#ffb300", "#14163d"),
-}
-def _hex(c): c = c.lstrip("#"); return tuple(int(c[i:i+2], 16) for i in (0, 2, 4))
-def _font(path, size, weight=None):
-    f = ImageFont.truetype(path, size)
-    if weight:
-        try: f.set_variation_by_axes([weight])
-        except Exception: pass
-    return f
+FD = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fonts")
+BIG = os.path.join(FD, "Boldonse-Regular.ttf"); TXT = os.path.join(FD, "BricolageGrotesque-Bold.ttf")
+MONO = os.path.join(FD, "GeistMono-Regular.ttf")
+INK = (18, 21, 52); CREAM = (244, 239, 227); SIGNAL = (255, 206, 46)
+FIELD = {"question": ((22, 26, 74), (108, 72, 220)), "decompte": ((12, 14, 40), (70, 52, 160)),
+         "vrai": ((6, 92, 66), (40, 200, 140)), "faux": ((150, 32, 34), (255, 110, 70)),
+         "explication": ((52, 24, 78), (200, 70, 140)), "chiffre": ((14, 52, 140), (60, 160, 255)),
+         "fin": ((236, 150, 18), (255, 214, 90))}
+LABEL = {"question": "VRAI OU FAUX ?", "decompte": "RÉFLÉCHIS", "vrai": "VERDICT", "faux": "VERDICT",
+         "explication": "OBSERVATION", "chiffre": "MESURE", "fin": "À TOI"}
+F = lambda p, s: ImageFont.truetype(p, s)
+
+def _propre(t): return "".join(ch for ch in t if ord(ch) < 0x2190 or ch == "€").replace("  ", " ").strip()
+
 def _fond(kind, seed):
-    a, b, acc = PAL[kind]; A, B = _hex(a), _hex(b)
-    g = Image.new("RGB", (W, H))
-    px = g.load()
-    for y in range(H):
-        t = y/(H-1); col = tuple(int(A[i]*(1-t)+B[i]*t) for i in range(3))
-        for x in range(0, W): px[x, y] = col
-    rnd = random.Random(seed)
+    base, glow = FIELD[kind]; rnd = random.Random(seed)
+    img = Image.new("RGBA", (W, H), base + (255,))
     halo = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(halo)
-    for _ in range(9):                                   # grosses bulles lumineuses floues
-        r = rnd.randint(140, 360); x = rnd.randint(-100, W+100); y = rnd.randint(-100, H+100)
-        d.ellipse((x-r, y-r, x+r, y+r), fill=(255, 255, 255, rnd.randint(18, 40)))
-    halo = halo.filter(ImageFilter.GaussianBlur(60))
-    rays = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d2 = ImageDraw.Draw(rays)   # rayons doux depuis le haut
-    for k in range(12):
-        ang = -math.pi/2 + (k-5.5)*0.16
-        d2.polygon([(W/2, -200), (W/2+2400*math.cos(ang-0.035), -200+2400*math.sin(ang+math.pi)*-1),
-                    (W/2+2400*math.cos(ang+0.035), -200+2400*math.sin(ang+math.pi)*-1)], fill=(255, 255, 255, 10 if k % 2 else 0))
-    rays = rays.filter(ImageFilter.GaussianBlur(8))
-    sp = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d3 = ImageDraw.Draw(sp)       # petites étincelles
-    for _ in range(60):
-        x, y, r = rnd.randint(0, W), rnd.randint(0, H), rnd.choice([2, 2, 3, 4])
-        d3.ellipse((x-r, y-r, x+r, y+r), fill=(255, 255, 255, rnd.randint(60, 160)))
-    img = g.convert("RGBA"); img.alpha_composite(rays); img.alpha_composite(halo); img.alpha_composite(sp)
-    vg = Image.new("L", (W, H), 0); dv = ImageDraw.Draw(vg); dv.ellipse((-300, -200, W+300, H+200), fill=255)
-    vg = vg.filter(ImageFilter.GaussianBlur(160)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 90))
-    img = Image.composite(img, Image.alpha_composite(img, dark), vg)
-    return img, _hex(acc)
-def _propre(t):  # retire les émojis (non affichables avec ces polices)
-    return "".join(ch for ch in t if ord(ch) < 0x2190 or ch in "€").replace("  ", " ").strip()
+    d.ellipse((W/2-760, 560-760, W/2+760, 560+760), fill=glow + (150,))
+    img.alpha_composite(halo.filter(ImageFilter.GaussianBlur(220)))
+    lines = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lines)
+    for x in range(0, W+1, 90): d.line((x, 0, x, H), fill=(255, 255, 255, 14), width=1)        # grille d'observation
+    for y in range(0, H+1, 90): d.line((0, y, W, y), fill=(255, 255, 255, 14), width=1)
+    for r in range(260, 1300, 120): d.ellipse((W/2-r, 560-r, W/2+r, 560+r), outline=(255, 255, 255, 18), width=2)  # anneaux
+    img.alpha_composite(lines)
+    m = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(m); c = (255, 255, 255, 120)
+    for (x, y) in ((70, 70), (W-70, 70), (70, H-70), (W-70, H-70)):                                  # repères de calage
+        d.line((x-22, y, x+22, y), fill=c, width=3); d.line((x, y-22, x, y+22), fill=c, width=3); d.ellipse((x-9, y-9, x+9, y+9), outline=c, width=2)
+    # (aucun texte en haut de l'écran : demande de l'utilisateur)
+    img.alpha_composite(m)
+    noise = Image.effect_noise((W//2, H//2), 40).resize((W, H)).convert("L")                         # grain papier
+    gr = Image.new("RGBA", (W, H), (255, 255, 255, 0)); gr.putalpha(noise.point(lambda v: max(0, v-128)//10))
+    img.alpha_composite(gr)
+    vg = Image.new("L", (W, H), 0); ImageDraw.Draw(vg).ellipse((-260, -160, W+260, H+160), fill=255)
+    img = Image.composite(img, Image.alpha_composite(img, Image.new("RGBA", (W, H), (0, 0, 0, 110))), vg.filter(ImageFilter.GaussianBlur(170)))
+    return img
+
 def _wrap(d, txt, font, maxw):
     words, lines, cur = [w for w in txt.split(" ") if w], [], ""
     for w in words:
-        t = (cur+" "+w).strip()
+        t = (cur + " " + w).strip()
         if d.textlength(t.replace("{", "").replace("}", ""), font=font) <= maxw: cur = t
         else: lines.append(cur); cur = w
     if cur: lines.append(cur)
     return lines
-def _texte(img, txt, y0, size, maxw, color=(20, 22, 61), carte=True, centre=True):
-    txt = re.sub(r"\{[^}]*\}", lambda m: m.group(0).replace(" ", "\u00a0"), _propre(txt)); d = ImageDraw.Draw(img)
+
+def _cartel(img, txt, y0, size, maxw=840):
+    """Étiquette crème au double filet (cartel de musée), mot-clé surligné."""
+    txt = re.sub(r"\{[^}]*\}", lambda m: m.group(0).replace(" ", " "), _propre(txt)); d = ImageDraw.Draw(img)
     for s in range(size, 40, -4):
-        f = _font(MONT, s, 800); lines = _wrap(d, txt, f, maxw)
-        if len(lines) <= 6: break
-    lh = int(s*1.22); th = lh*len(lines)
-    if carte:
-        pad = 54; x0, x1 = (W-maxw)//2-pad, (W+maxw)//2+pad
-        sh = Image.new("RGBA", img.size, (0, 0, 0, 0)); ds = ImageDraw.Draw(sh)
-        ds.rounded_rectangle((x0+10, y0-pad+22, x1+10, y0+th+pad+22), 48, fill=(0, 0, 0, 110))
-        img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(22)))
-        ImageDraw.Draw(img).rounded_rectangle((x0, y0-pad, x1, y0+th+pad), 48, fill=(255, 255, 255, 245))
-    d = ImageDraw.Draw(img)
+        f = F(TXT, s); lines = _wrap(d, txt, f, maxw)
+        if len(lines) <= 5: break
+    lh = int(s*1.18); th = lh*len(lines); pad = 58
+    x0, x1, y1 = (W-maxw)//2-pad, (W+maxw)//2+pad, y0+th+pad
+    sh = Image.new("RGBA", img.size, (0, 0, 0, 0)); ImageDraw.Draw(sh).rectangle((x0+14, y0-pad+18, x1+14, y1+18), fill=(0, 0, 0, 120))
+    img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(18))); d = ImageDraw.Draw(img)
+    d.rectangle((x0, y0-pad, x1, y1), fill=CREAM)
+    d.rectangle((x0+14, y0-pad+14, x1-14, y1-14), outline=INK, width=3); d.rectangle((x0+22, y0-pad+22, x1-22, y1-22), outline=INK, width=1)
     for i, line in enumerate(lines):
-        parts = re.split(r"(\{[^}]*\})", line); plain = line.replace("{", "").replace("}", "")
-        x = (W-d.textlength(plain, font=f))/2 if centre else (W-maxw)/2; y = y0+i*lh
-        for p in parts:
+        plain = line.replace("{", "").replace("}", ""); x = (W - d.textlength(plain, font=f))/2; y = y0 + i*lh
+        for p in re.split(r"(\{[^}]*\})", line):
             if not p: continue
             hl = p.startswith("{"); p = p.strip("{}"); w = d.textlength(p, font=f)
-            if hl: d.rounded_rectangle((x-8, y+s*0.12, x+w+8, y+s*1.12), 14, fill=(255, 210, 63))
-            d.text((x, y), p, font=f, fill=color); x += w
-    return y0+th
-def _gros(img, txt, cy, size, fill, stroke=(20, 22, 61), angle=0):
+            if hl: d.rectangle((x-6, y+s*0.55, x+w+6, y+s*1.02), fill=SIGNAL)
+            d.text((x, y), p, font=f, fill=INK); x += w
+    return y1
+
+def _monument(img, txt, cy, size, fill=CREAM, shadow=SIGNAL, angle=0, maxw=940):
     lay = Image.new("RGBA", img.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
     while True:
-        f = _font(ANTON, size); w = d.textlength(txt, font=f)
-        if w <= 960 or size < 60: break
-        size -= 10
-    d.text(((W-w)/2+8, cy-size*0.62+12), txt, font=f, fill=(0, 0, 0, 120))
-    d.text(((W-w)/2, cy-size*0.62), txt, font=f, fill=fill, stroke_width=max(4, size//28), stroke_fill=stroke)
+        f = F(BIG, size); bb = d.textbbox((0, 0), txt, font=f); w, h = bb[2]-bb[0], bb[3]-bb[1]
+        if w <= maxw or size < 50: break
+        size -= 8
+    x, y = (W-w)/2-bb[0], cy-h/2-bb[1]
+    d.text((x+12, y+12), txt, font=f, fill=shadow)          # second passage mal calé (risographie)
+    d.text((x, y), txt, font=f, fill=fill)
     if angle: lay = lay.rotate(angle, center=(W/2, cy), resample=Image.BICUBIC)
     img.alpha_composite(lay)
-ICONES = ("piece", "carte", "cheque", "cerveau", "os", "globe", "horloge", "ampoule", "billet", "livre")
-def _icone(img, nom, cx, cy, r=150):
-    d = ImageDraw.Draw(img); ink = (20, 22, 61); gold = (255, 210, 63); wht = (255, 255, 255)
-    halo = Image.new("RGBA", img.size, (0, 0, 0, 0)); ImageDraw.Draw(halo).ellipse((cx-r*1.5, cy-r*1.5, cx+r*1.5, cy+r*1.5), fill=(255, 255, 255, 70))
-    img.alpha_composite(halo.filter(ImageFilter.GaussianBlur(40))); d = ImageDraw.Draw(img); lw = 10
-    if nom == "piece":
-        for k, dx in enumerate((-70, 70, 0)):
-            d.ellipse((cx+dx-r*0.7, cy-r*0.7+(k == 2)*-30, cx+dx+r*0.7, cy+r*0.7+(k == 2)*-30), fill=gold, outline=ink, width=lw)
-            d.ellipse((cx+dx-r*0.48, cy-r*0.48+(k == 2)*-30, cx+dx+r*0.48, cy+r*0.48+(k == 2)*-30), outline=(214, 160, 20), width=8)
-    elif nom == "carte":
-        d.rounded_rectangle((cx-r*1.3, cy-r*0.8, cx+r*1.3, cy+r*0.8), 30, fill=(80, 90, 150), outline=ink, width=lw)
-        d.rounded_rectangle((cx-r*1.0, cy-r*0.45, cx-r*0.5, cy-r*0.05), 10, fill=gold, outline=ink, width=6)
-        for i in range(4): d.rounded_rectangle((cx-r*1.0+i*r*0.55, cy+r*0.3, cx-r*0.6+i*r*0.55, cy+r*0.42), 6, fill=wht)
-    elif nom in ("cheque", "billet"):
-        d.rounded_rectangle((cx-r*1.4, cy-r*0.7, cx+r*1.4, cy+r*0.7), 22, fill=(250, 246, 230) if nom == "cheque" else (120, 200, 140), outline=ink, width=lw)
-        for i in range(3): d.line((cx-r*1.1, cy-r*0.25+i*r*0.25, cx+r*0.4, cy-r*0.25+i*r*0.25), fill=ink, width=8)
-        d.rounded_rectangle((cx+r*0.6, cy-r*0.45, cx+r*1.15, cy-r*0.1), 8, outline=ink, width=6)
-    elif nom == "horloge":
-        d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=wht, outline=ink, width=lw); d.line((cx, cy, cx, cy-r*0.65), fill=ink, width=12); d.line((cx, cy, cx+r*0.45, cy+r*0.2), fill=ink, width=12)
-    elif nom == "ampoule":
-        d.ellipse((cx-r*0.8, cy-r, cx+r*0.8, cy+r*0.5), fill=gold, outline=ink, width=lw); d.rectangle((cx-r*0.35, cy+r*0.45, cx+r*0.35, cy+r*0.9), fill=(200, 200, 210), outline=ink, width=8)
-    elif nom == "globe":
-        d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=(70, 150, 240), outline=ink, width=lw)
-        d.ellipse((cx-r*0.6, cy-r*0.7, cx+r*0.1, cy-r*0.1), fill=(90, 200, 120)); d.ellipse((cx+r*0.1, cy+r*0.1, cx+r*0.7, cy+r*0.6), fill=(90, 200, 120))
-    elif nom == "livre":
-        d.polygon([(cx, cy-r*0.6), (cx-r*1.3, cy-r*0.8), (cx-r*1.3, cy+r*0.7), (cx, cy+r*0.9)], fill=wht, outline=ink); d.polygon([(cx, cy-r*0.6), (cx+r*1.3, cy-r*0.8), (cx+r*1.3, cy+r*0.7), (cx, cy+r*0.9)], fill=wht, outline=ink)
-    elif nom in ("cerveau", "os"):
-        d.ellipse((cx-r*1.1, cy-r*0.8, cx+r*1.1, cy+r*0.8), fill=(255, 160, 190) if nom == "cerveau" else wht, outline=ink, width=lw)
-def ecran(kind, texte, out, compteur=None, icone=None, seed=None):
-    img, acc = _fond(kind, seed if seed is not None else hash(texte) & 0xffff)
+
+def _cadran(img, cy, r):
     d = ImageDraw.Draw(img)
-    if compteur:   # petit compteur discret en bas (pas de badge en haut)
-        f = _font(MONT, 44, 800); w = d.textlength(compteur, font=f)
-        d.rounded_rectangle(((W-w)/2-30, 1420, (W+w)/2+30, 1496), 38, fill=(20, 22, 61)); d.text(((W-w)/2, 1428), compteur, font=f, fill=(255, 210, 63))
+    for k in range(60):                                        # graduations d'instrument
+        a = k/60*2*math.pi - math.pi/2; l = 34 if k % 5 == 0 else 16; w = 5 if k % 5 == 0 else 2
+        d.line((W/2+math.cos(a)*(r-l), cy+math.sin(a)*(r-l), W/2+math.cos(a)*r, cy+math.sin(a)*r), fill=CREAM, width=w)
+    d.ellipse((W/2-r-18, cy-r-18, W/2+r+18, cy+r+18), outline=SIGNAL, width=6)
+
+ICONES = ("piece", "carte", "cheque", "billet", "cerveau", "os", "globe", "horloge", "ampoule", "livre")
+def _specimen(img, nom, cx, cy, r=170):
+    d = ImageDraw.Draw(img)
+    d.ellipse((cx-r-40, cy-r-40, cx+r+40, cy+r+40), outline=(255, 255, 255, 90), width=2)
+    for k in range(36):
+        a = k/36*2*math.pi; d.line((cx+math.cos(a)*(r+40), cy+math.sin(a)*(r+40), cx+math.cos(a)*(r+54), cy+math.sin(a)*(r+54)), fill=(255, 255, 255, 120), width=2)
+    d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=CREAM, outline=INK, width=6)
+    s = r*0.62; lw = 9; gold = SIGNAL
+    if nom == "piece":
+        for dx, dy in ((-s*0.45, s*0.18), (s*0.45, s*0.18), (0, -s*0.25)):
+            d.ellipse((cx+dx-s*0.55, cy+dy-s*0.55, cx+dx+s*0.55, cy+dy+s*0.55), fill=gold, outline=INK, width=lw)
+            d.ellipse((cx+dx-s*0.33, cy+dy-s*0.33, cx+dx+s*0.33, cy+dy+s*0.33), outline=INK, width=4)
+    elif nom == "carte":
+        d.rounded_rectangle((cx-s*1.1, cy-s*0.68, cx+s*1.1, cy+s*0.68), 18, fill=(60, 80, 170), outline=INK, width=lw)
+        d.rounded_rectangle((cx-s*0.8, cy-s*0.32, cx-s*0.35, cy+s*0.05), 8, fill=gold, outline=INK, width=5)
+    elif nom in ("cheque", "billet"):
+        d.rectangle((cx-s*1.15, cy-s*0.6, cx+s*1.15, cy+s*0.6), fill=CREAM if nom == "cheque" else (120, 200, 140), outline=INK, width=lw)
+        for i in range(3): d.line((cx-s*0.9, cy-s*0.2+i*s*0.22, cx+s*0.3, cy-s*0.2+i*s*0.22), fill=INK, width=6)
+    elif nom == "horloge":
+        d.ellipse((cx-s, cy-s, cx+s, cy+s), outline=INK, width=lw); d.line((cx, cy, cx, cy-s*0.7), fill=INK, width=10); d.line((cx, cy, cx+s*0.5, cy+s*0.2), fill=INK, width=10)
+    elif nom == "ampoule":
+        d.ellipse((cx-s*0.7, cy-s*0.95, cx+s*0.7, cy+s*0.4), fill=gold, outline=INK, width=lw); d.rectangle((cx-s*0.3, cy+s*0.4, cx+s*0.3, cy+s*0.8), fill=(190, 190, 200), outline=INK, width=6)
+    elif nom == "globe":
+        d.ellipse((cx-s, cy-s, cx+s, cy+s), fill=(70, 140, 230), outline=INK, width=lw); d.ellipse((cx-s*0.6, cy-s*0.6, cx+s*0.1, cy-s*0.05), fill=(90, 190, 120)); d.ellipse((cx+s*0.1, cy+s*0.1, cx+s*0.65, cy+s*0.6), fill=(90, 190, 120))
+    elif nom == "livre":
+        d.polygon([(cx, cy-s*0.5), (cx-s*1.1, cy-s*0.7), (cx-s*1.1, cy+s*0.6), (cx, cy+s*0.8)], fill=(255, 255, 255), outline=INK); d.polygon([(cx, cy-s*0.5), (cx+s*1.1, cy-s*0.7), (cx+s*1.1, cy+s*0.6), (cx, cy+s*0.8)], fill=(255, 255, 255), outline=INK)
+    else:
+        d.ellipse((cx-s*0.95, cy-s*0.7, cx+s*0.95, cy+s*0.7), fill=(255, 170, 195) if nom == "cerveau" else (255, 255, 255), outline=INK, width=lw)
+
+def ecran(kind, texte, out, compteur=None, icone=None, seed=None):
+    img = _fond(kind, seed if seed is not None else hash((kind, texte)) & 0xffff)
+    if compteur:
+        d = ImageDraw.Draw(img); f = F(MONO, 40); w = d.textlength(compteur, font=f)
+        d.rectangle(((W-w)/2-28, 1430, (W+w)/2+28, 1500), fill=INK, outline=SIGNAL, width=3); d.text(((W-w)/2, 1442), compteur, font=f, fill=SIGNAL)
     if kind == "decompte":
-        cy = 960; R = 260
-        glow = Image.new("RGBA", img.size, (0, 0, 0, 0)); ImageDraw.Draw(glow).ellipse((W/2-R-40, cy-R-40, W/2+R+40, cy+R+40), outline=(255, 210, 63, 200), width=40)
-        img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(30))); d = ImageDraw.Draw(img)
-        d.ellipse((W/2-R, cy-R, W/2+R, cy+R), outline=(255, 210, 63), width=22)
-        _gros(img, texte, cy+20, 380, (255, 255, 255))
+        _cadran(img, 900, 330); _monument(img, texte, 900, 400, fill=CREAM, shadow=SIGNAL)
     elif kind in ("vrai", "faux"):
-        _gros(img, "VRAI !" if kind == "vrai" else "FAUX !", 520, 260, (255, 255, 255), angle=-6)
-        if texte: _texte(img, texte, 860, 76, 860)
+        _monument(img, "VRAI" if kind == "vrai" else "FAUX", 520, 230, angle=-4)
+        if texte: _cartel(img, texte, 860, 76)
     elif kind == "chiffre":
-        if icone: _icone(img, icone, W//2, 420)
-        _gros(img, texte.split("|")[0], 860, 210, acc)
-        if "|" in texte: _texte(img, texte.split("|")[1], 1120, 72, 860)
+        if icone: _specimen(img, icone, W//2, 470, 150)
+        big, _, small = texte.partition("|"); _monument(img, big, 820, 160, fill=CREAM, shadow=SIGNAL)
+        if small: _cartel(img, small, 1030, 70)
     elif kind == "fin":
-        _gros(img, "ET TOI ?", 520, 230, (255, 255, 255), angle=-4)
-        _texte(img, texte, 860, 80, 860)
-    else:  # question, explication
-        if icone: _icone(img, icone, W//2, 470)
-        _texte(img, texte, 860 if icone else 720, 92 if kind == "question" else 76, 880)
-    img.convert("RGB").save(out)
-    return out
+        _monument(img, "ET TOI ?", 540, 200, fill=INK, shadow=CREAM, angle=-3)
+        _cartel(img, texte, 860, 80)
+    else:
+        if icone: _specimen(img, icone, W//2, 520)
+        _cartel(img, texte, 860 if icone else 720, 92 if kind == "question" else 76)
+    img.convert("RGB").save(out); return out

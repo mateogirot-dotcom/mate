@@ -4,7 +4,7 @@
 1. **Voix** (gratuit, GitHub Actions) : écrire `voix/jobs/<id-video>.json`
    `{"reference": "voix/hugo-ref.wav", "langue": "fr", "exaggeration": 0.75, "cfg": 0.4, "segments": ["texte écran 0", "texte écran 1", ...]}`
    puis commit + push. L'action « Voix Chatterbox » crée `voix/out/<id-video>/seg0.wav`, `seg1.wav`… (3 à 6 min), puis `git pull`.
-2. **Écrans (décor attractif, OBLIGATOIRE depuis le 26 oct. 2026)** : fabriquer chaque écran avec `tools/decor.py`
+2. **Écrans (décor attractif, OBLIGATOIRE depuis le 26 oct. 2026)** : fabriquer chaque écran avec `tools/decor.py` (style « Archive lumineuse », lire `tools/PHILOSOPHIE-DECOR.md`)
    (`from decor import ecran` après `sys.path.insert(0, "tools")`) : dégradé coloré, bulles lumineuses, carte blanche, gros titres.
    Types : "question" (avec une icône), "decompte" ("3","2","1"), "vrai" / "faux", "explication", "chiffre" ("GROS CHIFFRE|phrase"), "fin".
    Mettre le MOT-CLÉ entre {accolades} pour le surligner en jaune. Icônes : piece, carte, cheque, billet, cerveau, os, globe, horloge, ampoule, livre.
