@@ -1,0 +1,224 @@
+{
+ "apprentissage_2006_2015": {
+  "Le Paresseux (témoin : tout S&P 500, ne bouge jamais)": {
+   "final": 21252,
+   "net_apres_prelevements": 19160,
+   "par_an_pct": 8.1,
+   "pire_chute_pct": -47.1,
+   "volatilite_pct": 14.0,
+   "note": 0.17,
+   "decisions_actives": 1
+  },
+  "Le Prudent (témoin : 60 % actions, 40 % liquidités)": {
+   "final": 14526,
+   "net_apres_prelevements": 13685,
+   "par_an_pct": 3.9,
+   "pire_chute_pct": -32.1,
+   "volatilite_pct": 8.7,
+   "note": 0.12,
+   "decisions_actives": 10
+  },
+  "La Tortue (répartit et garde)": {
+   "final": 17179,
+   "net_apres_prelevements": 15843,
+   "par_an_pct": 5.8,
+   "pire_chute_pct": -49.5,
+   "volatilite_pct": 14.5,
+   "note": 0.12,
+   "decisions_actives": 10
+  },
+  "La Boussole (suit la tendance)": {
+   "final": 21085,
+   "net_apres_prelevements": 19023,
+   "par_an_pct": 8.0,
+   "pire_chute_pct": -23.1,
+   "volatilite_pct": 11.4,
+   "note": 0.35,
+   "decisions_actives": 103
+  },
+  "La Fusée (suit l'élan des 12 derniers mois)": {
+   "final": 23996,
+   "net_apres_prelevements": 21393,
+   "par_an_pct": 9.5,
+   "pire_chute_pct": -29.4,
+   "volatilite_pct": 13.3,
+   "note": 0.32,
+   "decisions_actives": 103
+  },
+  "Le Chineur (achète ce qui a le plus baissé)": {
+   "final": 13515,
+   "net_apres_prelevements": 12861,
+   "par_an_pct": 3.2,
+   "pire_chute_pct": -51.1,
+   "volatilite_pct": 17.0,
+   "note": 0.06,
+   "decisions_actives": 117
+  },
+  "La Vigilante (se met à l'abri après -15 %)": {
+   "final": 19269,
+   "net_apres_prelevements": 17545,
+   "par_an_pct": 7.0,
+   "pire_chute_pct": -17.5,
+   "volatilite_pct": 10.9,
+   "note": 0.4,
+   "decisions_actives": 99
+  },
+  "L'Équilibriste (plus d'argent sur ce qui bouge le moins)": {
+   "final": 17778,
+   "net_apres_prelevements": 16332,
+   "par_an_pct": 6.1,
+   "pire_chute_pct": -49.8,
+   "volatilite_pct": 15.1,
+   "note": 0.12,
+   "decisions_actives": 117
+  }
+ },
+ "inconnue_2016_2026": {
+  "Le Paresseux (témoin : tout S&P 500, ne bouge jamais)": {
+   "final": 41497,
+   "net_apres_prelevements": 35639,
+   "par_an_pct": 14.2,
+   "pire_chute_pct": -19.5,
+   "volatilite_pct": 14.4,
+   "note": 0.73,
+   "decisions_actives": 1
+  },
+  "Le Prudent (témoin : 60 % actions, 40 % liquidités)": {
+   "final": 20603,
+   "net_apres_prelevements": 18631,
+   "par_an_pct": 7.0,
+   "pire_chute_pct": -12.6,
+   "volatilite_pct": 7.6,
+   "note": 0.55,
+   "decisions_actives": 12
+  },
+  "La Tortue (répartit et garde)": {
+   "final": 32006,
+   "net_apres_prelevements": 27913,
+   "par_an_pct": 11.4,
+   "pire_chute_pct": -21.0,
+   "volatilite_pct": 12.8,
+   "note": 0.54,
+   "decisions_actives": 12
+  },
+  "La Boussole (suit la tendance)": {
+   "final": 23289,
+   "net_apres_prelevements": 20817,
+   "par_an_pct": 8.2,
+   "pire_chute_pct": -21.8,
+   "volatilite_pct": 10.8,
+   "note": 0.37,
+   "decisions_actives": 126
+  },
+  "La Fusée (suit l'élan des 12 derniers mois)": {
+   "final": 32586,
+   "net_apres_prelevements": 28385,
+   "par_an_pct": 11.6,
+   "pire_chute_pct": -24.1,
+   "volatilite_pct": 14.3,
+   "note": 0.48,
+   "decisions_actives": 126
+  },
+  "Le Chineur (achète ce qui a le plus baissé)": {
+   "final": 33515,
+   "net_apres_prelevements": 29141,
+   "par_an_pct": 11.9,
+   "pire_chute_pct": -22.7,
+   "volatilite_pct": 15.0,
+   "note": 0.52,
+   "decisions_actives": 130
+  },
+  "La Vigilante (se met à l'abri après -15 %)": {
+   "final": 24622,
+   "net_apres_prelevements": 21902,
+   "par_an_pct": 8.7,
+   "pire_chute_pct": -21.2,
+   "volatilite_pct": 12.2,
+   "note": 0.41,
+   "decisions_actives": 125
+  },
+  "L'Équilibriste (plus d'argent sur ce qui bouge le moins)": {
+   "final": 31641,
+   "net_apres_prelevements": 27616,
+   "par_an_pct": 11.3,
+   "pire_chute_pct": -20.8,
+   "volatilite_pct": 13.2,
+   "note": 0.54,
+   "decisions_actives": 130
+  }
+ },
+ "total_2006_2026": {
+  "Le Paresseux (témoin : tout S&P 500, ne bouge jamais)": {
+   "final": 88280,
+   "net_apres_prelevements": 73720,
+   "par_an_pct": 11.3,
+   "pire_chute_pct": -47.1,
+   "volatilite_pct": 14.2,
+   "note": 0.24,
+   "decisions_actives": 1
+  },
+  "Le Prudent (témoin : 60 % actions, 40 % liquidités)": {
+   "final": 29943,
+   "net_apres_prelevements": 26234,
+   "par_an_pct": 5.5,
+   "pire_chute_pct": -32.1,
+   "volatilite_pct": 8.1,
+   "note": 0.17,
+   "decisions_actives": 21
+  },
+  "La Tortue (répartit et garde)": {
+   "final": 55035,
+   "net_apres_prelevements": 46659,
+   "par_an_pct": 8.7,
+   "pire_chute_pct": -49.5,
+   "volatilite_pct": 13.6,
+   "note": 0.18,
+   "decisions_actives": 21
+  },
+  "La Boussole (suit la tendance)": {
+   "final": 49152,
+   "net_apres_prelevements": 41870,
+   "par_an_pct": 8.1,
+   "pire_chute_pct": -23.1,
+   "volatilite_pct": 11.1,
+   "note": 0.35,
+   "decisions_actives": 228
+  },
+  "La Fusée (suit l'élan des 12 derniers mois)": {
+   "final": 78271,
+   "net_apres_prelevements": 65573,
+   "par_an_pct": 10.6,
+   "pire_chute_pct": -29.4,
+   "volatilite_pct": 13.8,
+   "note": 0.36,
+   "decisions_actives": 228
+  },
+  "Le Chineur (achète ce qui a le plus baissé)": {
+   "final": 45341,
+   "net_apres_prelevements": 38768,
+   "par_an_pct": 7.7,
+   "pire_chute_pct": -51.1,
+   "volatilite_pct": 16.0,
+   "note": 0.15,
+   "decisions_actives": 246
+  },
+  "La Vigilante (se met à l'abri après -15 %)": {
+   "final": 47492,
+   "net_apres_prelevements": 40518,
+   "par_an_pct": 7.9,
+   "pire_chute_pct": -21.2,
+   "volatilite_pct": 11.6,
+   "note": 0.37,
+   "decisions_actives": 223
+  },
+  "L'Équilibriste (plus d'argent sur ce qui bouge le moins)": {
+   "final": 56309,
+   "net_apres_prelevements": 47696,
+   "par_an_pct": 8.8,
+   "pire_chute_pct": -49.8,
+   "volatilite_pct": 14.1,
+   "note": 0.18,
+   "decisions_actives": 246
+  }
+ }
+}
