@@ -1,0 +1,600 @@
+[
+ {
+  "_id": "hector-le-paresseux",
+  "agent": "Hector le Paresseux",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": true,
+  "plafond": false,
+  "style_code": "paresseux",
+  "style": "Témoin. Ne bouge jamais.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 4.15,
+   "rendement": 0.142,
+   "chute": 0.195
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Témoin",
+   "trait": "Ne bouge jamais",
+   "quote": "Pourquoi se fatiguer ?",
+   "aime": "La sieste",
+   "deteste": "Les décisions",
+   "tic": "Bâille pendant les séances"
+  },
+  "look": {
+   "skin": 14724222,
+   "hair": [
+    "messy",
+    8014378
+   ],
+   "top": 9214904,
+   "bottom": 3818072,
+   "h": 1.0,
+   "w": 1.12,
+   "face": [
+    "dot",
+    "smile",
+    "calm"
+   ],
+   "extras": [
+    "stripes"
+   ]
+  },
+  "anim": "calm",
+  "notes": []
+ },
+ {
+  "_id": "prudence-la-prudente",
+  "agent": "Prudence la Prudente",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": true,
+  "plafond": true,
+  "style_code": "prudent",
+  "style": "Témoin. Garde 40 % de côté.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 2.06,
+   "rendement": 0.07,
+   "chute": 0.126
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Témoin",
+   "trait": "Garde 40 % de côté",
+   "quote": "On ne sait jamais.",
+   "aime": "Les matelas de sécurité",
+   "deteste": "Les montagnes russes",
+   "tic": "Recompte sa tirelire"
+  },
+  "look": {
+   "skin": 15976870,
+   "hair": [
+    "bun",
+    12567756
+   ],
+   "top": 6271850,
+   "bottom": 2502730,
+   "h": 0.95,
+   "w": 0.95,
+   "face": [
+    "dot",
+    "smile",
+    "calm"
+   ],
+   "extras": [
+    "rectglasses",
+    "scarf"
+   ]
+  },
+  "anim": "nod",
+  "notes": []
+ },
+ {
+  "_id": "toinette-la-tortue",
+  "agent": "Toinette la Tortue",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": false,
+  "plafond": true,
+  "style_code": "tortue",
+  "style": "Répartit et garde.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 3.201,
+   "rendement": 0.114,
+   "chute": 0.21
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Trader",
+   "trait": "Répartit et garde",
+   "quote": "Lentement mais sûrement.",
+   "aime": "Le long terme",
+   "deteste": "S'agiter",
+   "tic": "Arrose sa plante avant chaque séance"
+  },
+  "look": {
+   "skin": 11694921,
+   "hair": [
+    "curly",
+    1314830
+   ],
+   "top": 3120731,
+   "bottom": 3818072,
+   "h": 0.95,
+   "w": 1.05,
+   "face": [
+    "happy",
+    "smile",
+    "calm"
+   ],
+   "extras": [
+    "book"
+   ]
+  },
+  "anim": "calm",
+  "notes": []
+ },
+ {
+  "_id": "berenice-la-boussole",
+  "agent": "Bérénice la Boussole",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": false,
+  "plafond": true,
+  "style_code": "boussole",
+  "style": "Suit la tendance.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 2.329,
+   "rendement": 0.08199999999999999,
+   "chute": 0.218
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Trader",
+   "trait": "Suit la tendance",
+   "quote": "Je suis le vent.",
+   "aime": "Les courbes qui montent",
+   "deteste": "Aller à contre-courant",
+   "tic": "Vérifie sa boussole"
+  },
+  "look": {
+   "skin": 15845281,
+   "hair": [
+    "pony",
+    10503722
+   ],
+   "hat": "cap",
+   "top": 3895256,
+   "bottom": 2502730,
+   "h": 1.0,
+   "w": 0.95,
+   "face": [
+    "big",
+    "smile",
+    "up"
+   ],
+   "extras": [
+    "watch"
+   ]
+  },
+  "anim": "look",
+  "notes": []
+ },
+ {
+  "_id": "fanny-la-fusee",
+  "agent": "Fanny la Fusée",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": false,
+  "plafond": true,
+  "style_code": "fusee",
+  "style": "Suit l'élan.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 3.259,
+   "rendement": 0.11599999999999999,
+   "chute": 0.24100000000000002
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Trader",
+   "trait": "Suit l'élan",
+   "quote": "Ce qui monte peut encore monter !",
+   "aime": "La vitesse",
+   "deteste": "Attendre",
+   "tic": "Tape du pied en attendant"
+  },
+  "look": {
+   "skin": 9263675,
+   "hair": [
+    "spiky",
+    15228223
+   ],
+   "top": 15228223,
+   "bottom": 2502730,
+   "h": 0.97,
+   "w": 0.95,
+   "face": [
+    "happy",
+    "grin",
+    "up"
+   ],
+   "extras": [
+    "headphones"
+   ]
+  },
+  "anim": "bounce",
+  "notes": []
+ },
+ {
+  "_id": "charles-le-chineur",
+  "agent": "Charles le Chineur",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": false,
+  "plafond": true,
+  "style_code": "chineur",
+  "style": "Achète les baisses.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 3.352,
+   "rendement": 0.11900000000000001,
+   "chute": 0.22699999999999998
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Trader",
+   "trait": "Achète les baisses",
+   "quote": "Une chute, c'est des soldes.",
+   "aime": "Les bonnes affaires",
+   "deteste": "Acheter au plus haut",
+   "tic": "Dessine des flèches partout"
+  },
+  "look": {
+   "skin": 14260844,
+   "hair": [
+    "side",
+    2759960
+   ],
+   "hat": "fedora",
+   "top": 11886650,
+   "bottom": 4869987,
+   "h": 1.05,
+   "w": 1.05,
+   "face": [
+    "dot",
+    "smirk",
+    "raised"
+   ],
+   "extras": [
+    "magnifier",
+    "mustache"
+   ]
+  },
+  "anim": "look",
+  "notes": []
+ },
+ {
+  "_id": "valentine-la-vigilante",
+  "agent": "Valentine la Vigilante",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": false,
+  "plafond": true,
+  "style_code": "vigilante",
+  "style": "Se protège après une chute.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 2.462,
+   "rendement": 0.087,
+   "chute": 0.212
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Trader",
+   "trait": "Se protège après une chute",
+   "quote": "Au premier signal, je me mets à l'abri.",
+   "aime": "Les filets de sécurité",
+   "deteste": "Les pertes qui s'accumulent",
+   "tic": "Relit ses règles tous les matins"
+  },
+  "look": {
+   "skin": 13011806,
+   "hair": [
+    "bob",
+    2759960
+   ],
+   "top": 11566312,
+   "bottom": 2502730,
+   "h": 1.0,
+   "w": 0.92,
+   "face": [
+    "dot",
+    "flat",
+    "sharp"
+   ],
+   "extras": [
+    "jacket",
+    "clipboard"
+   ]
+  },
+  "anim": "headshake",
+  "notes": []
+ },
+ {
+  "_id": "elio-l-equilibriste",
+  "agent": "Elio l'Équilibriste",
+  "statut": "actif",
+  "direct": true,
+  "ligue": "pea",
+  "devise": "€",
+  "temoin": false,
+  "plafond": true,
+  "style_code": "equilibriste",
+  "style": "Équilibre les risques.",
+  "depart": 10000,
+  "cash": 10000,
+  "valeur": 10000,
+  "pic": 10000,
+  "mdd": 0,
+  "positions": [],
+  "historique": [],
+  "courbe": [
+   {
+    "date": "2026-10-26",
+    "valeur": 10000
+   }
+  ],
+  "periode": "en direct depuis le 26 oct. 2026",
+  "depuis": "26 oct. 2026",
+  "maj": "2026-10-26",
+  "moment": "ouverture",
+  "entrainement": {
+   "periode": "test honnête 2016-2026, sur des années jamais vues",
+   "multiplie": 3.164,
+   "rendement": 0.113,
+   "chute": 0.20800000000000002
+  },
+  "regles": [],
+  "methode": [
+   "Argent fictif : 10 000 € au départ le 26 oct. 2026. Aucun ordre réel n'est jamais passé. Ce n'est pas un conseil d'investissement.",
+   "Règles du PEA : seulement des fonds « éligibles PEA » (ici S&P 500, Nasdaq-100, Europe, France, pays émergents), pas d'obligations ni d'or.",
+   "Les fonds PEA sont simulés par les indices qu'ils copient, convertis en euros (prix des fonds SPY, QQQ, VGK, EWQ, EEM divisés par l'EUR/USD).",
+   "Chaque prix est vérifié avec 2 sources ; sinon le fonds est mis de côté pour la séance.",
+   "Une séance par semaine (le lundi soir). Frais fictifs : 0,1 % par achat ou vente.",
+   "Règle de Gaspard : jamais plus de 50 % sur un seul fonds (sauf le témoin Hector, qui copie l'investisseur le plus simple).",
+   "Fiscalité d'un vrai PEA de plus de 5 ans : pas d'impôt sur les gains, mais 18,6 % de prélèvements sociaux (2026)."
+  ],
+  "perso": {
+   "role": "Trader",
+   "trait": "Équilibre les risques",
+   "quote": "Un pied sur chaque fil.",
+   "aime": "La stabilité",
+   "deteste": "Tout miser sur un seul fonds",
+   "tic": "Fait tenir un crayon en équilibre"
+  },
+  "look": {
+   "skin": 15777946,
+   "hair": [
+    "short",
+    3877408
+   ],
+   "top": 15906116,
+   "bottom": 3818072,
+   "h": 1.02,
+   "w": 1.0,
+   "face": [
+    "dot",
+    "smile",
+    "calm"
+   ],
+   "extras": [
+    "pencil",
+    "overalls"
+   ]
+  },
+  "anim": "sway",
+  "notes": []
+ }
+]
