@@ -23,7 +23,9 @@ LABEL = {"question": "VRAI OU FAUX ?", "decompte": "RÉFLÉCHIS", "vrai": "VERDI
          "explication": "OBSERVATION", "chiffre": "MESURE", "fin": "À TOI"}
 F = lambda p, s: ImageFont.truetype(p, s)
 
-def _propre(t): return "".join(ch for ch in t if ord(ch) < 0x2190 or ch == "€").replace("  ", " ").strip()
+def _propre(t):
+    t = "".join(ch for ch in t if ord(ch) < 0x2190 or ch == "€").replace("  ", " ").strip()
+    return re.sub(r" ([?!:;€])", "\u00a0\\1", t)   # pas de « ? » seul en début de ligne
 
 def _fond(kind, seed):
     base, glow = FIELD[kind]; rnd = random.Random(seed)
