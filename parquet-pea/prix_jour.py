@@ -1,5 +1,5 @@
 # Prix de clôture du jour pour la Tour PEA (argent fictif), avec 2 sources indépendantes.
-# Source 1 : Yahoo Finance (yfinance). Source 2 : Stooq (CSV). Résultat : parquet-pea/data/prix_jour.json
+# Source 1 : Yahoo Finance (yfinance). Source 2 : Nasdaq (fonds) et BCE via Frankfurter (EUR/USD). Résultat : parquet-pea/data/prix_jour.json
 import io, json, urllib.request, datetime as dt
 import yfinance as yf, pandas as pd
 T = {"SPY": "spy.us", "QQQ": "qqq.us", "VGK": "vgk.us", "EWQ": "ewq.us", "EEM": "eem.us", "EURUSD": "eurusd"}
@@ -12,11 +12,15 @@ for t, s in T.items():
     except Exception as e:
         r["yahoo"] = {"erreur": str(e)[:120]}
     try:
-        raw = urllib.request.urlopen(f"https://stooq.com/q/l/?s={s}&f=sd2t2ohlcv&h&e=csv", timeout=30).read().decode()
-        d = pd.read_csv(io.StringIO(raw)).iloc[0]
-        r["stooq"] = {"date": str(d["Date"]), "prix": round(float(d["Close"]), 6)}
+        if t == "EURUSD":
+            j = json.loads(urllib.request.urlopen("https://api.frankfurter.app/latest?from=EUR&to=USD", timeout=30).read().decode())
+            r["bce"] = {"date": j["date"], "prix": float(j["rates"]["USD"])}
+        else:
+            req = urllib.request.Request(f"https://api.nasdaq.com/api/quote/{t}/info?assetclass=etf", headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
+            j = json.loads(urllib.request.urlopen(req, timeout=30).read().decode())["data"]["primaryData"]
+            r["nasdaq"] = {"date": j.get("lastTradeTimestamp", ""), "prix": float(j["lastSalePrice"].replace("$", "").replace(",", ""))}
     except Exception as e:
-        r["stooq"] = {"erreur": str(e)[:120]}
+        r["source2"] = {"erreur": str(e)[:120]}
     out["prix"][t] = r
 open("parquet-pea/data/prix_jour.json", "w").write(json.dumps(out, indent=1))
 print(json.dumps(out, indent=1))
