@@ -27,7 +27,9 @@ ENC = ["-r","30","-c:v","libx264","-preset","veryfast","-crf","20","-pix_fmt","y
 
 def clip(src, d, out):
     if src.endswith(".png") or src.endswith(".jpg"):
-        run("ffmpeg","-y","-loglevel","error","-loop","1","-t",f"{d:.3f}","-i",src,"-vf","scale=1080:1920,format=yuv420p",*ENC,out)
+        n = max(1, int(round(d*30)))   # léger zoom lent (effet Ken Burns) pour que l'image vive
+        run("ffmpeg","-y","-loglevel","error","-loop","1","-framerate","30","-i",src,"-vf",
+            f"scale=1188:2112,zoompan=z='1+0.04*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1080x1920:fps=30,format=yuv420p","-frames:v",str(n),*ENC,out)
     else:
         run("ffmpeg","-y","-loglevel","error","-i",src,"-vf",f"scale=1080:1920,tpad=stop_mode=clone:stop_duration=60,trim=0:{d:.3f},setpts=PTS-STARTPTS",*ENC,out)
 
