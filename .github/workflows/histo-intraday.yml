@@ -1,0 +1,22 @@
+name: Historique intraday (court terme)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  histo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet yfinance pandas
+      - run: python parquet-pea/histo_intraday.py
+      - run: |
+          git config user.name "parquet-donnees"
+          git config user.email "parquet-donnees@users.noreply.github.com"
+          git add parquet-pea/data/intraday_5m.csv.gz
+          git commit -m "Historique intraday 5 min" || echo rien
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 3; done
