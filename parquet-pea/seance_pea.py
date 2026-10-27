@@ -14,7 +14,7 @@ MAP = {"SP500": ("SPY", "sp500_usd", "Fonds PEA S&P 500"), "NASDAQ": ("QQQ", "na
        "EUROPE": ("VGK", "europe_usd", "Fonds PEA Europe"), "FRANCE": ("EWQ", "france_usd", "Fonds PEA CAC 40 / France"),
        "EMERGENTS": ("EEM", "emergents_usd", "Fonds PEA pays émergents")}
 CAP, FEE = 0.5, 0.001
-mk = json.load(open(sys.argv[1])); pf = json.load(open(sys.argv[2])); out = sys.argv[3]; os.makedirs(out, exist_ok=True)
+mk = json.load(open(sys.argv[1])); pf = [a for a in json.load(open(sys.argv[2])) if not a.get("court_terme")]; out = sys.argv[3]; os.makedirs(out, exist_ok=True)
 fx = pd.read_csv(D+"eurusd.csv", index_col=0, parse_dates=True)["close"]
 hist = pd.DataFrame({k: pd.read_csv(D+v[1]+".csv", index_col=0, parse_dates=True)["close"] for k, v in MAP.items()}).div(fx, axis=0).dropna()
 today = pd.Timestamp(mk["date"])

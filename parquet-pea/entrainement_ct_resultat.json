@@ -1,0 +1,134 @@
+{
+ "jours": [
+  "2026-08-03",
+  "2026-10-26"
+ ],
+ "apprentissage": [
+  "2026-08-03",
+  "2026-09-25"
+ ],
+ "test": [
+  "2026-09-28",
+  "2026-10-26"
+ ],
+ "res": {
+  "parquet-eclair": {
+   "params": {
+    "thr": 0.005,
+    "tp": 0.015,
+    "sl": 0.003
+   },
+   "train": {
+    "gain": -0.0107,
+    "chute": 0.0174,
+    "ordres": 34,
+    "jours_gagnants": 0.33
+   },
+   "test": {
+    "gain": -0.0018,
+    "chute": 0.0078,
+    "ordres": 26,
+    "jours_gagnants": 0.33
+   }
+  },
+  "parquet-elastique": {
+   "params": {
+    "rsi_lo": 20,
+    "rsi_hi": 60,
+    "dev": 0.004,
+    "tp": 0.008,
+    "sl": 0.005
+   },
+   "train": {
+    "gain": -0.0093,
+    "chute": 0.0171,
+    "ordres": 70,
+    "jours_gagnants": 0.32
+   },
+   "test": {
+    "gain": -0.0163,
+    "chute": 0.0163,
+    "ordres": 42,
+    "jours_gagnants": 0.25
+   }
+  },
+  "parquet-starter": {
+   "params": {
+    "buf": 0.001,
+    "tp": 0.02,
+    "sl": 0.003
+   },
+   "train": {
+    "gain": -0.0622,
+    "chute": 0.0782,
+    "ordres": 132,
+    "jours_gagnants": 0.21
+   },
+   "test": {
+    "gain": -0.0497,
+    "chute": 0.0497,
+    "ordres": 82,
+    "jours_gagnants": 0.21
+   }
+  },
+  "pea-eclair": {
+   "params": {
+    "thr": 0.005,
+    "tp": 0.004,
+    "sl": 0.003
+   },
+   "train": {
+    "gain": -0.0107,
+    "chute": 0.012,
+    "ordres": 24,
+    "jours_gagnants": 0.38
+   },
+   "test": {
+    "gain": -0.0018,
+    "chute": 0.004,
+    "ordres": 18,
+    "jours_gagnants": 0.4
+   }
+  },
+  "pea-elastique": {
+   "params": {
+    "rsi_lo": 20,
+    "rsi_hi": 60,
+    "dev": 0.004,
+    "tp": 0.008,
+    "sl": 0.005
+   },
+   "train": {
+    "gain": -0.0001,
+    "chute": 0.0079,
+    "ordres": 46,
+    "jours_gagnants": 0.36
+   },
+   "test": {
+    "gain": -0.0065,
+    "chute": 0.0083,
+    "ordres": 32,
+    "jours_gagnants": 0.56
+   }
+  },
+  "pea-starter": {
+   "params": {
+    "buf": 0.001,
+    "tp": 0.02,
+    "sl": 0.003
+   },
+   "train": {
+    "gain": -0.0662,
+    "chute": 0.0793,
+    "ordres": 104,
+    "jours_gagnants": 0.14
+   },
+   "test": {
+    "gain": -0.0455,
+    "chute": 0.0455,
+    "ordres": 66,
+    "jours_gagnants": 0.12
+   }
+  }
+ }
+}
