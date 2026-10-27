@@ -1,0 +1,77 @@
+{
+ "maj_utc": "2026-10-27T07:50:13Z",
+ "prix_usd": {
+  "SPY": 765.37,
+  "QQQ": 712.2,
+  "IWM": 276.99,
+  "EFA": 102.91,
+  "EEM": 61.82,
+  "GLD": 367.82,
+  "IEF": 91.12,
+  "VGK": 86.55,
+  "EWQ": 41.51
+ },
+ "detail": {
+  "SPY": {
+   "yahoo": 765.225,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 765.37,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "QQQ": {
+   "yahoo": 712.12,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 712.2,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "IWM": {
+   "yahoo": 276.96,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 276.99,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "EFA": {
+   "yahoo": 102.9,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 102.91,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "EEM": {
+   "yahoo": 61.81,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 61.82,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "GLD": {
+   "yahoo": 367.83,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 367.82,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "IEF": {
+   "yahoo": 91.11,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 91.12,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "VGK": {
+   "yahoo": 86.56,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 86.55,
+   "nasdaq_heure": "Oct 26, 2026"
+  },
+  "EWQ": {
+   "yahoo": 41.51,
+   "yahoo_heure": "2026-10-26 15:59:00-04:00",
+   "nasdaq": 41.51,
+   "nasdaq_heure": "Oct 26, 2026"
+  }
+ },
+ "ecartes": {},
+ "marche": "Closed",
+ "eurusd_detail": {
+  "yahoo": 1.11645,
+  "bce": 1.1188
+ },
+ "eurusd": 1.11645
+}
