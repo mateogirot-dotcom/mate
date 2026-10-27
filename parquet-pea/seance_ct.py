@@ -15,7 +15,7 @@ NOMS = {"SPY": "S&P 500 (ETF SPY)", "QQQ": "Nasdaq 100 (ETF QQQ)", "IWM": "Petit
 UNIV = {"parquet": ["SPY", "QQQ", "IWM", "EFA", "EEM", "GLD", "IEF"], "pea": list(PEA)}
 paris = dt.datetime.fromisoformat(C["maj_utc"].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Paris"))
 stamp = paris.strftime("%Y-%m-%d %H:%M"); jour = (SIG.get("SPY") or {}).get("date") or C.get("date") or paris.strftime("%Y-%m-%d")
-ouvert = bool(SIG) and "clos" not in str(C.get("marche", "")).lower()
+ouvert = bool(SIG) and "open" in str(C.get("marche", "")).lower()
 res = []
 for a in A:
     lg = a["ligue_ct"]; U = UNIV[lg]; e = a.setdefault("etat", {})
