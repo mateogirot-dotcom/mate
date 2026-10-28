@@ -1,33 +1,33 @@
 {
- "maj_utc": "2026-10-28T13:08:23Z",
+ "maj_utc": "2026-10-28T13:18:21Z",
  "prix_usd": {
-  "SPY": 771.69,
-  "QQQ": 724.2977,
-  "IWM": 280.48,
+  "SPY": 771.3762,
+  "QQQ": 723.75,
+  "IWM": 280.4495,
   "EFA": 103.43,
-  "GLD": 371.7,
-  "IEF": 91.05,
-  "VGK": 86.98,
+  "GLD": 371.441,
+  "IEF": 91.08,
+  "VGK": 86.8,
   "EWQ": 41.74
  },
  "detail": {
   "SPY": {
    "yahoo": 769.72,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 771.69,
-   "nasdaq_heure": "Oct 28, 2026 9:08 AM ET"
+   "nasdaq": 771.3762,
+   "nasdaq_heure": "Oct 28, 2026 9:17 AM ET"
   },
   "QQQ": {
    "yahoo": 721.24,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 724.2977,
-   "nasdaq_heure": "Oct 28, 2026 9:08 AM ET"
+   "nasdaq": 723.75,
+   "nasdaq_heure": "Oct 28, 2026 9:17 AM ET"
   },
   "IWM": {
    "yahoo": 280.16,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 280.48,
-   "nasdaq_heure": "Oct 28, 2026 9:07 AM ET"
+   "nasdaq": 280.4495,
+   "nasdaq_heure": "Oct 28, 2026 9:17 AM ET"
   },
   "EFA": {
    "yahoo": 103.575,
@@ -38,26 +38,26 @@
   "EEM": {
    "yahoo": 62.51,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 63.2388,
-   "nasdaq_heure": "Oct 28, 2026 8:51 AM ET"
+   "nasdaq": 63.17,
+   "nasdaq_heure": "Oct 28, 2026 9:15 AM ET"
   },
   "GLD": {
    "yahoo": 372.27,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 371.7,
-   "nasdaq_heure": "Oct 28, 2026 9:08 AM ET"
+   "nasdaq": 371.441,
+   "nasdaq_heure": "Oct 28, 2026 9:16 AM ET"
   },
   "IEF": {
    "yahoo": 91.09,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 91.05,
-   "nasdaq_heure": "Oct 28, 2026 9:08 AM ET"
+   "nasdaq": 91.08,
+   "nasdaq_heure": "Oct 28, 2026 9:18 AM ET"
   },
   "VGK": {
    "yahoo": 87.045,
    "yahoo_heure": "2026-10-27 15:59:00-04:00",
-   "nasdaq": 86.98,
-   "nasdaq_heure": "Oct 28, 2026 9:07 AM ET"
+   "nasdaq": 86.8,
+   "nasdaq_heure": "Oct 28, 2026 9:17 AM ET"
   },
   "EWQ": {
    "yahoo": 41.71,
@@ -208,8 +208,8 @@
  },
  "marche": "Pre-Market",
  "eurusd_detail": {
-  "yahoo": 1.11371,
+  "yahoo": 1.11359,
   "bce": 1.115
  },
- "eurusd": 1.11371
+ "eurusd": 1.11359
 }
