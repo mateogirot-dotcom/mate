@@ -1,11 +1,10 @@
 {
- "maj_utc": "2026-10-29T13:18:54Z",
+ "maj_utc": "2026-10-29T13:28:52Z",
  "prix_usd": {
-  "SPY": 770.0818,
-  "QQQ": 718.67,
-  "IWM": 282.27,
+  "SPY": 768.89,
+  "IWM": 282.26,
   "EFA": 103.68,
-  "IEF": 91.02,
+  "IEF": 91.09,
   "VGK": 87.5,
   "EWQ": 41.85
  },
@@ -13,20 +12,20 @@
   "SPY": {
    "yahoo": 772.35,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
-   "nasdaq": 770.0818,
-   "nasdaq_heure": "Oct 29, 2026 9:18 AM ET"
+   "nasdaq": 768.89,
+   "nasdaq_heure": "Oct 29, 2026 9:28 AM ET"
   },
   "QQQ": {
    "yahoo": 725.48,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
-   "nasdaq": 718.67,
-   "nasdaq_heure": "Oct 29, 2026 9:18 AM ET"
+   "nasdaq": 716.95,
+   "nasdaq_heure": "Oct 29, 2026 9:28 AM ET"
   },
   "IWM": {
    "yahoo": 281.29,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
-   "nasdaq": 282.27,
-   "nasdaq_heure": "Oct 29, 2026 9:17 AM ET"
+   "nasdaq": 282.26,
+   "nasdaq_heure": "Oct 29, 2026 9:28 AM ET"
   },
   "EFA": {
    "yahoo": 103.695,
@@ -37,20 +36,20 @@
   "EEM": {
    "yahoo": 63.53,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
-   "nasdaq": 62.5618,
-   "nasdaq_heure": "Oct 29, 2026 9:17 AM ET"
+   "nasdaq": 62.5392,
+   "nasdaq_heure": "Oct 29, 2026 9:26 AM ET"
   },
   "GLD": {
    "yahoo": 373.5,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
-   "nasdaq": 368.8948,
-   "nasdaq_heure": "Oct 29, 2026 9:18 AM ET"
+   "nasdaq": 368.632,
+   "nasdaq_heure": "Oct 29, 2026 9:28 AM ET"
   },
   "IEF": {
    "yahoo": 90.855,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
-   "nasdaq": 91.02,
-   "nasdaq_heure": "Oct 29, 2026 9:15 AM ET"
+   "nasdaq": 91.09,
+   "nasdaq_heure": "Oct 29, 2026 9:27 AM ET"
   },
   "VGK": {
    "yahoo": 87.315,
@@ -62,10 +61,11 @@
    "yahoo": 41.875,
    "yahoo_heure": "2026-10-28 15:59:00-04:00",
    "nasdaq": 41.85,
-   "nasdaq_heure": "Oct 28, 2026"
+   "nasdaq_heure": "Oct 29, 2026 9:21 AM ET"
   }
  },
  "ecartes": {
+  "QQQ": "les 2 sources ne concordent pas ou une manque",
   "EEM": "les 2 sources ne concordent pas ou une manque",
   "GLD": "les 2 sources ne concordent pas ou une manque"
  },
@@ -78,8 +78,8 @@
    "ret30": 0.002024,
    "ret60": 0.001452,
    "ret_jour": 0.001193,
-   "vwap": 771.198834,
-   "rsi": 51.322068,
+   "vwap": 771.230973,
+   "rsi": 51.313429,
    "or_high": 771.700012,
    "or_low": 769.23999,
    "n": 78,
@@ -93,7 +93,7 @@
    "ret30": 0.003618,
    "ret60": 0.002577,
    "ret_jour": 0.001878,
-   "vwap": 722.102035,
+   "vwap": 722.115866,
    "rsi": 57.615664,
    "or_high": 724.72998,
    "or_low": 720.299988,
@@ -108,7 +108,7 @@
    "ret30": 0.005182,
    "ret60": 0.005576,
    "ret_jour": 0.003353,
-   "vwap": 280.137165,
+   "vwap": 280.26528,
    "rsi": 57.314744,
    "or_high": 281.230011,
    "or_low": 279.940002,
@@ -123,7 +123,7 @@
    "ret30": 0.001497,
    "ret60": 0.003144,
    "ret_jour": 0.003435,
-   "vwap": 103.411103,
+   "vwap": 103.467138,
    "rsi": 52.0233,
    "or_high": 103.349998,
    "or_low": 103.184998,
@@ -138,7 +138,7 @@
    "ret30": 0.002604,
    "ret60": 0.00292,
    "ret_jour": 0.005062,
-   "vwap": 63.295744,
+   "vwap": 63.295722,
    "rsi": 50.0,
    "or_high": 63.275002,
    "or_low": 63.0,
@@ -153,7 +153,7 @@
    "ret30": 0.005059,
    "ret60": 0.010552,
    "ret_jour": 0.005952,
-   "vwap": 370.81685,
+   "vwap": 370.770098,
    "rsi": 62.784044,
    "or_high": 371.399994,
    "or_low": 370.76001,
@@ -168,7 +168,7 @@
    "ret30": 0.000551,
    "ret60": 0.000607,
    "ret_jour": -0.002251,
-   "vwap": 90.885763,
+   "vwap": 90.900841,
    "rsi": 38.942282,
    "or_high": 91.080002,
    "or_low": 91.0,
@@ -183,7 +183,7 @@
    "ret30": 0.00086,
    "ret60": 0.002181,
    "ret_jour": 0.00339,
-   "vwap": 87.12616,
+   "vwap": 87.106923,
    "rsi": 48.684435,
    "or_high": 87.129997,
    "or_low": 86.959999,
@@ -198,7 +198,7 @@
    "ret30": 0.002274,
    "ret60": 0.003475,
    "ret_jour": 0.002274,
-   "vwap": 41.748644,
+   "vwap": 41.768517,
    "rsi": 52.688313,
    "or_high": 41.785,
    "or_low": 41.689999,
@@ -208,8 +208,8 @@
  },
  "marche": "Pre-Market",
  "eurusd_detail": {
-  "yahoo": 1.11136,
+  "yahoo": 1.11259,
   "bce": 1.1133
  },
- "eurusd": 1.11136
+ "eurusd": 1.11259
 }
