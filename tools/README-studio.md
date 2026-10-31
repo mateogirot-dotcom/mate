@@ -28,3 +28,12 @@ original du Studio : lunettes rondes, gilet vert, nœud papillon jaune). Thème 
 - Interactif = on parle au spectateur (« tu », « à ton avis », « tu savais ? »), on le fait deviner AVANT d'expliquer.
 - La voix (Hugo expressif) = le Prof Marius. Un segment de voix par scène.
 - Nadia vérifie aussi : le prof est entier et visible, rien ne chevauche le texte du tableau.
+
+## Filou le renard (OBLIGATOIRE depuis le 31 oct. 2026, remplace le Prof Marius)
+L'utilisateur a refusé le Prof Marius (« trop robot, trop IA ») et veut un personnage plus animé : un animal.
+Filou est un petit renard dessiné ORIGINAL du Studio (foulard jaune, grands yeux brillants), animation fluide
+(bras qui bougent en continu, tête qui penche, oreilles, queue, respiration, regard, clignements doux).
+- Montage : `python3 tools/perso.py plan.json video.mp4` (MÊME plan.json que tools/prof.py, voir son en-tête).
+- Même déroulé que ci-dessus (question, 3 choix + décompte, réponse, explication, bonus, question de fin).
+- La voix Hugo expressif = Filou. Le texte parlé : Filou parle à un ami, joyeux, curieux, phrases courtes.
+- Rendu : environ 4 min pour 40 s de vidéo.
