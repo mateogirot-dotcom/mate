@@ -214,8 +214,17 @@ def main(plan_path, out):
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                            "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
                            "-pix_fmt", "yuv420p", tmpv], stdin=subprocess.PIPE)
+    perso_on = plan.get("personnage", True)   # false = version sans personnage (tableau centré + ondes de voix)
+    DY = 0 if perso_on else 300
+    def bars(img, o, t):
+        d = ImageDraw.Draw(img); n = 11; w = 34; gap = 22; x0 = (W - (n * w + (n - 1) * gap)) // 2; cy = 1330
+        for j in range(n):
+            h = 18 + 150 * o * (0.55 + 0.45 * math.sin(t * 9 + j * 1.7)) * (1 - abs(j - n // 2) / (n * 0.8))
+            d.rounded_rectangle((x0 + j * (w + gap), cy - h / 2, x0 + j * (w + gap) + w, cy + h / 2), 16, fill=(255, 206, 46))
     def emit(pose, ouv, n, fond, lay, badge=None, intro=True):
         nonlocal tg
+        if DY:
+            l3 = Image.new("RGBA", lay.size, (0, 0, 0, 0)); l3.alpha_composite(lay, (0, DY)); lay = l3
         static = fond.copy(); static.alpha_composite(lay)
         for i in range(n):
             t = tg + i / FPS
@@ -223,9 +232,11 @@ def main(plan_path, out):
                 a = (i + 1) / 8; img = fond.copy(); l2 = lay.copy()
                 l2.putalpha(l2.getchannel("A").point(lambda v: int(v * a))); img.alpha_composite(l2, (0, int((1 - a) * 40)))
             else: img = static.copy()
-            if badge is not None: _badge(img, badge[i])
+            if badge is not None:
+                bl = Image.new("RGBA", img.size, (0, 0, 0, 0)); _badge(bl, badge[i]); img.alpha_composite(bl, (0, DY))
             st = A.step(pose, float(ouv[i]), t, 0)
-            img.alpha_composite(draw(st, t), (X0, Y0))
+            if perso_on: img.alpha_composite(draw(st, t), (X0, Y0))
+            else: bars(img, st["mouth"], t)
             ff.stdin.write(img.convert("RGB").tobytes())
         tg += n / FPS
     for k, sc in enumerate(plan["scenes"]):
