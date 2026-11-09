@@ -1,84 +1,85 @@
 {
- "maj_utc": "2026-11-06T21:13:54Z",
+ "maj_utc": "2026-11-09T14:16:59Z",
  "prix_usd": {
-  "SPY": 735.9,
-  "QQQ": 656.8064,
-  "IWM": 273.81,
-  "EFA": 101.89,
-  "EEM": 59.3069,
-  "GLD": 372.5739,
-  "IEF": 91.85,
-  "VGK": 87.31,
-  "EWQ": 42.89
+  "SPY": 741.7904,
+  "QQQ": 662.11,
+  "IEF": 92.02,
+  "EWQ": 43.32
  },
  "detail": {
   "SPY": {
-   "yahoo": 735.44,
+   "yahoo": 735.34,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 735.9,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 741.7904,
+   "nasdaq_heure": "Nov 9, 2026 9:16 AM ET"
   },
   "QQQ": {
    "yahoo": 656.22,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 656.8064,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 662.11,
+   "nasdaq_heure": "Nov 9, 2026 9:16 AM ET"
   },
   "IWM": {
-   "yahoo": 273.62,
+   "yahoo": 273.64,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 273.81,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 277.7746,
+   "nasdaq_heure": "Nov 9, 2026 9:16 AM ET"
   },
   "EFA": {
-   "yahoo": 101.875,
+   "yahoo": 101.88,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 101.89,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 103.56,
+   "nasdaq_heure": "Nov 9, 2026 8:47 AM ET"
   },
   "EEM": {
-   "yahoo": 59.33,
+   "yahoo": 59.32,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 59.3069,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 60.05,
+   "nasdaq_heure": "Nov 9, 2026 9:11 AM ET"
   },
   "GLD": {
    "yahoo": 372.555,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 372.5739,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 378.15,
+   "nasdaq_heure": "Nov 9, 2026 9:16 AM ET"
   },
   "IEF": {
    "yahoo": 91.84,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 91.85,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "nasdaq": 92.02,
+   "nasdaq_heure": "Nov 9, 2026 9:16 AM ET"
   },
   "VGK": {
-   "yahoo": 87.325,
-   "yahoo_heure": "2026-11-06 15:58:00-05:00",
-   "nasdaq": 87.31,
-   "nasdaq_heure": "Nov 6, 2026 4:13 PM ET"
+   "yahoo": 87.31,
+   "yahoo_heure": "2026-11-06 15:59:00-05:00",
+   "nasdaq": 88.91,
+   "nasdaq_heure": "Nov 9, 2026 9:00 AM ET"
   },
   "EWQ": {
-   "yahoo": 42.905,
+   "yahoo": 42.9,
    "yahoo_heure": "2026-11-06 15:59:00-05:00",
-   "nasdaq": 42.89,
-   "nasdaq_heure": "Nov 6, 2026 4:14 PM ET"
+   "nasdaq": 43.32,
+   "nasdaq_heure": "Nov 9, 2026 7:07 AM ET"
   }
  },
- "ecartes": {},
+ "ecartes": {
+  "IWM": "les 2 sources ne concordent pas ou une manque",
+  "EFA": "les 2 sources ne concordent pas ou une manque",
+  "EEM": "les 2 sources ne concordent pas ou une manque",
+  "GLD": "les 2 sources ne concordent pas ou une manque",
+  "VGK": "les 2 sources ne concordent pas ou une manque"
+ },
  "signaux": {
   "SPY": {
    "minute": 955,
-   "last": 735.440002,
+   "last": 735.340027,
    "open": 734.820007,
-   "ret15": -0.002347,
-   "ret30": -0.003428,
-   "ret60": -0.003536,
-   "ret_jour": 0.000844,
-   "vwap": 738.466077,
-   "rsi": 34.164418,
+   "ret15": -0.002482,
+   "ret30": -0.003564,
+   "ret60": -0.003672,
+   "ret_jour": 0.000708,
+   "vwap": 738.507237,
+   "rsi": 33.265238,
    "or_high": 742.210388,
    "or_low": 734.580017,
    "n": 78,
@@ -92,8 +93,8 @@
    "ret30": -0.004234,
    "ret60": -0.004551,
    "ret_jour": -0.003235,
-   "vwap": 658.851566,
-   "rsi": 38.308261,
+   "vwap": 659.340384,
+   "rsi": 38.331505,
    "or_high": 664.52002,
    "or_low": 655.169983,
    "n": 78,
@@ -101,14 +102,14 @@
   },
   "IWM": {
    "minute": 955,
-   "last": 273.619995,
-   "open": 271.980011,
-   "ret15": -0.00197,
-   "ret30": -0.002515,
-   "ret60": -0.001824,
-   "ret_jour": 0.00603,
-   "vwap": 273.031848,
-   "rsi": 43.749932,
+   "last": 273.640015,
+   "open": 271.959991,
+   "ret15": -0.001897,
+   "ret30": -0.002442,
+   "ret60": -0.001751,
+   "ret_jour": 0.006177,
+   "vwap": 273.050406,
+   "rsi": 44.149253,
    "or_high": 272.76001,
    "or_low": 270.230011,
    "n": 78,
@@ -116,14 +117,14 @@
   },
   "EFA": {
    "minute": 955,
-   "last": 101.875,
+   "last": 101.879997,
    "open": 101.300003,
-   "ret15": 0.000196,
-   "ret30": -0.000294,
-   "ret60": -0.00054,
-   "ret_jour": 0.005676,
-   "vwap": 101.989631,
-   "rsi": 47.333299,
+   "ret15": 0.000245,
+   "ret30": -0.000245,
+   "ret60": -0.000491,
+   "ret_jour": 0.005726,
+   "vwap": 101.979706,
+   "rsi": 47.681892,
    "or_high": 102.019997,
    "or_low": 101.269997,
    "n": 78,
@@ -131,14 +132,14 @@
   },
   "EEM": {
    "minute": 955,
-   "last": 59.330002,
+   "last": 59.32,
    "open": 59.450001,
-   "ret15": 0.000506,
-   "ret30": -0.000168,
-   "ret60": -0.000674,
-   "ret_jour": -0.002018,
-   "vwap": 59.372373,
-   "rsi": 51.33088,
+   "ret15": 0.000337,
+   "ret30": -0.000337,
+   "ret60": -0.000842,
+   "ret_jour": -0.002187,
+   "vwap": 59.350622,
+   "rsi": 50.674289,
    "or_high": 59.77,
    "or_low": 59.174999,
    "n": 78,
@@ -152,7 +153,7 @@
    "ret30": 0.000362,
    "ret60": 0.00047,
    "ret_jour": 0.008432,
-   "vwap": 371.406615,
+   "vwap": 371.798377,
    "rsi": 53.599585,
    "or_high": 371.149994,
    "or_low": 369.26001,
@@ -176,14 +177,14 @@
   },
   "VGK": {
    "minute": 955,
-   "last": 87.324997,
+   "last": 87.309998,
    "open": 86.889999,
-   "ret15": 0.000229,
-   "ret30": 5.7e-05,
-   "ret60": -5.7e-05,
-   "ret_jour": 0.005006,
-   "vwap": 87.433576,
-   "rsi": 50.961031,
+   "ret15": 5.7e-05,
+   "ret30": -0.000115,
+   "ret60": -0.000229,
+   "ret_jour": 0.004834,
+   "vwap": 87.46694,
+   "rsi": 49.504457,
    "or_high": 87.470001,
    "or_low": 86.709999,
    "n": 78,
@@ -191,24 +192,24 @@
   },
   "EWQ": {
    "minute": 955,
-   "last": 42.904999,
+   "last": 42.900002,
    "open": 42.639999,
-   "ret15": 0.000466,
-   "ret30": 0.0,
-   "ret60": -0.000349,
-   "ret_jour": 0.006215,
-   "vwap": 42.920248,
-   "rsi": 45.587856,
+   "ret15": 0.00035,
+   "ret30": -0.000116,
+   "ret60": -0.000466,
+   "ret_jour": 0.006098,
+   "vwap": 42.947351,
+   "rsi": 44.776187,
    "or_high": 42.900002,
    "or_low": 42.4953,
    "n": 78,
    "date": "2026-11-06"
   }
  },
- "marche": "After-Hours",
+ "marche": "Pre-Market",
  "eurusd_detail": {
-  "yahoo": 1.11445,
+  "yahoo": 1.1202,
   "bce": 1.1165
  },
- "eurusd": 1.11445
+ "eurusd": 1.1202
 }
