@@ -1,73 +1,64 @@
 {
- "maj_utc": "2026-11-09T21:26:20Z",
- "prix_usd": {
-  "SPY": 752.615,
-  "QQQ": 678.13,
-  "IWM": 281.89,
-  "EFA": 104.96,
-  "EEM": 61.03,
-  "GLD": 379.2899,
-  "IEF": 91.73,
-  "VGK": 89.95,
-  "EWQ": 44.09
- },
+ "maj_utc": "2026-11-10T14:06:48Z",
+ "prix_usd": {},
  "detail": {
   "SPY": {
    "yahoo": 752.61,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 752.615,
-   "nasdaq_heure": "Nov 9, 2026 4:25 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "QQQ": {
    "yahoo": 678.76,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 678.13,
-   "nasdaq_heure": "Nov 9, 2026 4:25 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "IWM": {
    "yahoo": 282.48,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 281.89,
-   "nasdaq_heure": "Nov 9, 2026 4:25 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "EFA": {
    "yahoo": 104.98,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 104.96,
-   "nasdaq_heure": "Nov 9, 2026 4:26 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "EEM": {
    "yahoo": 61.03,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 61.03,
-   "nasdaq_heure": "Nov 9, 2026 4:26 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "GLD": {
    "yahoo": 379.56,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 379.2899,
-   "nasdaq_heure": "Nov 9, 2026 4:26 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "IEF": {
    "yahoo": 91.795,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 91.73,
-   "nasdaq_heure": "Nov 9, 2026 4:26 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "VGK": {
    "yahoo": 89.985,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 89.95,
-   "nasdaq_heure": "Nov 9, 2026 4:26 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   },
   "EWQ": {
    "yahoo": 44.13,
    "yahoo_heure": "2026-11-09 15:59:00-05:00",
-   "nasdaq": 44.09,
-   "nasdaq_heure": "Nov 9, 2026 4:26 PM ET"
+   "nasdaq_err": "HTTP Error 403: Forbidden"
   }
  },
- "ecartes": {},
+ "ecartes": {
+  "SPY": "les 2 sources ne concordent pas ou une manque",
+  "QQQ": "les 2 sources ne concordent pas ou une manque",
+  "IWM": "les 2 sources ne concordent pas ou une manque",
+  "EFA": "les 2 sources ne concordent pas ou une manque",
+  "EEM": "les 2 sources ne concordent pas ou une manque",
+  "GLD": "les 2 sources ne concordent pas ou une manque",
+  "IEF": "les 2 sources ne concordent pas ou une manque",
+  "VGK": "les 2 sources ne concordent pas ou une manque",
+  "EWQ": "les 2 sources ne concordent pas ou une manque"
+ },
  "signaux": {
   "SPY": {
    "minute": 955,
@@ -205,10 +196,9 @@
    "date": "2026-11-09"
   }
  },
- "marche": "After-Hours",
  "eurusd_detail": {
-  "yahoo": 1.12233,
+  "yahoo": 1.11882,
   "bce": 1.1193
  },
- "eurusd": 1.12233
+ "eurusd": 1.11882
 }
