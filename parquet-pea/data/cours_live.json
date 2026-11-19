@@ -1,84 +1,85 @@
 {
- "maj_utc": "2026-11-18T21:27:20Z",
+ "maj_utc": "2026-11-19T14:19:33Z",
  "prix_usd": {
-  "SPY": 730.8462,
-  "QQQ": 660.6166,
-  "IWM": 270.28,
-  "EFA": 100.34,
-  "EEM": 57.96,
-  "GLD": 341.5112,
-  "IEF": 90.65,
-  "VGK": 85.85,
+  "IWM": 271.4721,
+  "EFA": 100.97,
+  "EEM": 58.07,
+  "GLD": 339.7192,
+  "IEF": 90.52,
+  "VGK": 86.37,
   "EWQ": 42.45
  },
  "detail": {
   "SPY": {
-   "yahoo": 730.33,
+   "yahoo": 730.325,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 730.8462,
-   "nasdaq_heure": "Nov 18, 2026 4:27 PM ET"
+   "nasdaq": 738.4345,
+   "nasdaq_heure": "Nov 19, 2026 9:18 AM ET"
   },
   "QQQ": {
    "yahoo": 659.51,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 660.6166,
-   "nasdaq_heure": "Nov 18, 2026 4:27 PM ET"
+   "nasdaq": 672.495,
+   "nasdaq_heure": "Nov 19, 2026 9:18 AM ET"
   },
   "IWM": {
    "yahoo": 270.14,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 270.28,
-   "nasdaq_heure": "Nov 18, 2026 4:26 PM ET"
+   "nasdaq": 271.4721,
+   "nasdaq_heure": "Nov 19, 2026 9:18 AM ET"
   },
   "EFA": {
    "yahoo": 100.25,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 100.34,
-   "nasdaq_heure": "Nov 18, 2026 4:26 PM ET"
+   "nasdaq": 100.97,
+   "nasdaq_heure": "Nov 19, 2026 9:01 AM ET"
   },
   "EEM": {
    "yahoo": 57.89,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 57.96,
-   "nasdaq_heure": "Nov 18, 2026 4:26 PM ET"
+   "nasdaq": 58.07,
+   "nasdaq_heure": "Nov 19, 2026 9:17 AM ET"
   },
   "GLD": {
    "yahoo": 341.17,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 341.5112,
-   "nasdaq_heure": "Nov 18, 2026 4:26 PM ET"
+   "nasdaq": 339.7192,
+   "nasdaq_heure": "Nov 19, 2026 9:19 AM ET"
   },
   "IEF": {
    "yahoo": 90.675,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 90.65,
-   "nasdaq_heure": "Nov 18, 2026 4:26 PM ET"
+   "nasdaq": 90.52,
+   "nasdaq_heure": "Nov 19, 2026 9:19 AM ET"
   },
   "VGK": {
    "yahoo": 85.86,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
-   "nasdaq": 85.85,
-   "nasdaq_heure": "Nov 18, 2026 4:27 PM ET"
+   "nasdaq": 86.37,
+   "nasdaq_heure": "Nov 19, 2026 9:13 AM ET"
   },
   "EWQ": {
-   "yahoo": 42.42,
+   "yahoo": 42.44,
    "yahoo_heure": "2026-11-18 15:59:00-05:00",
    "nasdaq": 42.45,
-   "nasdaq_heure": "Nov 18, 2026 4:26 PM ET"
+   "nasdaq_heure": "Nov 19, 2026 8:08 AM ET"
   }
  },
- "ecartes": {},
+ "ecartes": {
+  "SPY": "les 2 sources ne concordent pas ou une manque",
+  "QQQ": "les 2 sources ne concordent pas ou une manque"
+ },
  "signaux": {
   "SPY": {
    "minute": 955,
-   "last": 730.330017,
+   "last": 730.325012,
    "open": 733.369995,
-   "ret15": -0.000452,
-   "ret30": 0.000569,
-   "ret60": 8.9e-05,
-   "ret_jour": -0.004145,
-   "vwap": 730.318955,
-   "rsi": 53.25342,
+   "ret15": -0.000458,
+   "ret30": 0.000562,
+   "ret60": 8.2e-05,
+   "ret_jour": -0.004152,
+   "vwap": 730.143748,
+   "rsi": 53.173977,
    "or_high": 735.059998,
    "or_low": 728.580017,
    "n": 78,
@@ -92,7 +93,7 @@
    "ret30": 0.0026,
    "ret60": 0.00169,
    "ret_jour": -0.002357,
-   "vwap": 657.563025,
+   "vwap": 657.916307,
    "rsi": 58.970007,
    "or_high": 662.650024,
    "or_low": 653.799988,
@@ -107,7 +108,7 @@
    "ret30": -0.000185,
    "ret60": -0.000629,
    "ret_jour": 0.007421,
-   "vwap": 270.311576,
+   "vwap": 270.311579,
    "rsi": 47.826279,
    "or_high": 270.980011,
    "or_low": 267.899994,
@@ -117,12 +118,12 @@
   "EFA": {
    "minute": 955,
    "last": 100.25,
-   "open": 100.669998,
+   "open": 100.720001,
    "ret15": -5e-05,
    "ret30": 0.000549,
    "ret60": 0.000749,
-   "ret_jour": -0.004172,
-   "vwap": 100.415926,
+   "ret_jour": -0.004666,
+   "vwap": 100.415892,
    "rsi": 63.157789,
    "or_high": 100.790001,
    "or_low": 100.425003,
@@ -137,7 +138,7 @@
    "ret30": 0.002511,
    "ret60": 0.002337,
    "ret_jour": -0.006692,
-   "vwap": 57.949612,
+   "vwap": 57.943936,
    "rsi": 65.116258,
    "or_high": 58.369999,
    "or_low": 57.764999,
@@ -152,7 +153,7 @@
    "ret30": -0.000264,
    "ret60": 0.000469,
    "ret_jour": -0.014842,
-   "vwap": 343.145892,
+   "vwap": 343.229831,
    "rsi": 52.164665,
    "or_high": 346.309998,
    "or_low": 344.845001,
@@ -167,7 +168,7 @@
    "ret30": 0.000331,
    "ret60": 5.5e-05,
    "ret_jour": 0.001934,
-   "vwap": 90.649434,
+   "vwap": 90.648749,
    "rsi": 56.250596,
    "or_high": 90.680099,
    "or_low": 90.464996,
@@ -182,7 +183,7 @@
    "ret30": 0.0,
    "ret60": 0.000466,
    "ret_jour": -0.00579,
-   "vwap": 85.905831,
+   "vwap": 85.909125,
    "rsi": 60.713313,
    "or_high": 86.5,
    "or_low": 86.18,
@@ -191,24 +192,24 @@
   },
   "EWQ": {
    "minute": 955,
-   "last": 42.419998,
+   "last": 42.439999,
    "open": 42.639999,
-   "ret15": -0.001177,
-   "ret30": -0.001043,
-   "ret60": -0.000471,
-   "ret_jour": -0.00516,
-   "vwap": 42.492113,
-   "rsi": 52.482055,
+   "ret15": -0.000706,
+   "ret30": -0.000572,
+   "ret60": 0.0,
+   "ret_jour": -0.00469,
+   "vwap": 42.496423,
+   "rsi": 58.268147,
    "or_high": 42.689999,
    "or_low": 42.479099,
    "n": 78,
    "date": "2026-11-18"
   }
  },
- "marche": "After-Hours",
+ "marche": "Pre-Market",
  "eurusd_detail": {
-  "yahoo": 1.09757,
+  "yahoo": 1.10072,
   "bce": 1.0968
  },
- "eurusd": 1.09757
+ "eurusd": 1.10072
 }
