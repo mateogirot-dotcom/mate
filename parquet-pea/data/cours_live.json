@@ -1,73 +1,74 @@
 {
- "maj_utc": "2026-11-19T21:34:01Z",
+ "maj_utc": "2026-11-20T14:16:01Z",
  "prix_usd": {
-  "SPY": 714.2,
-  "QQQ": 642.3694,
-  "IWM": 263.52,
-  "EFA": 98.5,
-  "EEM": 56.75,
-  "GLD": 332.82,
-  "IEF": 90.79,
-  "VGK": 84.1082,
-  "EWQ": 41.88
+  "SPY": 711.9605,
+  "IWM": 263.81,
+  "EFA": 98.2,
+  "IEF": 91.2369
  },
  "detail": {
   "SPY": {
    "yahoo": 715.78,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 714.2,
-   "nasdaq_heure": "Nov 19, 2026 4:33 PM ET"
+   "nasdaq": 711.9605,
+   "nasdaq_heure": "Nov 20, 2026 9:15 AM ET"
   },
   "QQQ": {
    "yahoo": 645.1,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 642.3694,
-   "nasdaq_heure": "Nov 19, 2026 4:33 PM ET"
+   "nasdaq": 637.1891,
+   "nasdaq_heure": "Nov 20, 2026 9:15 AM ET"
   },
   "IWM": {
    "yahoo": 264.2,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 263.52,
-   "nasdaq_heure": "Nov 19, 2026 4:33 PM ET"
+   "nasdaq": 263.81,
+   "nasdaq_heure": "Nov 20, 2026 9:15 AM ET"
   },
   "EFA": {
    "yahoo": 98.77,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 98.5,
-   "nasdaq_heure": "Nov 19, 2026 4:34 PM ET"
+   "nasdaq": 98.2,
+   "nasdaq_heure": "Nov 20, 2026 9:07 AM ET"
   },
   "EEM": {
    "yahoo": 56.765,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 56.75,
-   "nasdaq_heure": "Nov 19, 2026 4:33 PM ET"
+   "nasdaq": 55.59,
+   "nasdaq_heure": "Nov 20, 2026 9:15 AM ET"
   },
   "GLD": {
    "yahoo": 335.19,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 332.82,
-   "nasdaq_heure": "Nov 19, 2026 4:33 PM ET"
+   "nasdaq": 327.58,
+   "nasdaq_heure": "Nov 20, 2026 9:15 AM ET"
   },
   "IEF": {
    "yahoo": 90.825,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 90.79,
-   "nasdaq_heure": "Nov 19, 2026 4:33 PM ET"
+   "nasdaq": 91.2369,
+   "nasdaq_heure": "Nov 20, 2026 9:14 AM ET"
   },
   "VGK": {
    "yahoo": 84.62,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 84.1082,
-   "nasdaq_heure": "Nov 19, 2026 4:34 PM ET"
+   "nasdaq": 83.26,
+   "nasdaq_heure": "Nov 20, 2026 9:06 AM ET"
   },
   "EWQ": {
    "yahoo": 41.91,
    "yahoo_heure": "2026-11-19 15:59:00-05:00",
-   "nasdaq": 41.88,
-   "nasdaq_heure": "Nov 19, 2026 4:34 PM ET"
+   "nasdaq": 41.46,
+   "nasdaq_heure": "Nov 20, 2026 6:19 AM ET"
   }
  },
- "ecartes": {},
+ "ecartes": {
+  "QQQ": "les 2 sources ne concordent pas ou une manque",
+  "EEM": "les 2 sources ne concordent pas ou une manque",
+  "GLD": "les 2 sources ne concordent pas ou une manque",
+  "VGK": "les 2 sources ne concordent pas ou une manque",
+  "EWQ": "les 2 sources ne concordent pas ou une manque"
+ },
  "signaux": {
   "SPY": {
    "minute": 955,
@@ -205,10 +206,10 @@
    "date": "2026-11-19"
   }
  },
- "marche": "After-Hours",
+ "marche": "Pre-Market",
  "eurusd_detail": {
-  "yahoo": 1.09709,
+  "yahoo": 1.09914,
   "bce": 1.0992
  },
- "eurusd": 1.09709
+ "eurusd": 1.09914
 }
