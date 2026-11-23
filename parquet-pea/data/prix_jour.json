@@ -1,64 +1,64 @@
 {
- "genere_le": "2026-11-16 21:49 UTC",
+ "genere_le": "2026-11-23 21:49 UTC",
  "prix": {
   "SPY": {
    "yahoo": {
-    "date": "2026-11-16",
-    "prix": 739.950012
+    "date": "2026-11-23",
+    "prix": 722.289978
    },
    "nasdaq": {
-    "date": "Nov 16, 2026 4:48 PM ET",
-    "prix": 739.95
+    "date": "Nov 23, 2026 4:48 PM ET",
+    "prix": 722.77
    }
   },
   "QQQ": {
    "yahoo": {
-    "date": "2026-11-16",
-    "prix": 661.75
+    "date": "2026-11-23",
+    "prix": 651.030029
    },
    "nasdaq": {
-    "date": "Nov 16, 2026 4:48 PM ET",
-    "prix": 661.7931
+    "date": "Nov 23, 2026 4:48 PM ET",
+    "prix": 649.7068
    }
   },
   "VGK": {
    "yahoo": {
-    "date": "2026-11-16",
-    "prix": 88.040001
+    "date": "2026-11-23",
+    "prix": 84.550003
    },
    "nasdaq": {
-    "date": "Nov 16, 2026 4:49 PM ET",
-    "prix": 86.5
+    "date": "Nov 23, 2026 4:49 PM ET",
+    "prix": 84.93
    }
   },
   "EWQ": {
    "yahoo": {
-    "date": "2026-11-16",
-    "prix": 43.439999
+    "date": "2026-11-23",
+    "prix": 41.650002
    },
    "nasdaq": {
-    "date": "Nov 16, 2026 4:48 PM ET",
-    "prix": 43.44
+    "date": "Nov 23, 2026 4:49 PM ET",
+    "prix": 41.65
    }
   },
   "EEM": {
    "yahoo": {
-    "date": "2026-11-16",
-    "prix": 58.889999
+    "date": "2026-11-23",
+    "prix": 57.830002
    },
    "nasdaq": {
-    "date": "Nov 16, 2026 4:48 PM ET",
-    "prix": 58.9067
+    "date": "Nov 23, 2026 4:49 PM ET",
+    "prix": 57.7334
    }
   },
   "EURUSD": {
    "yahoo": {
-    "date": "2026-11-16",
-    "prix": 1.10011
+    "date": "2026-11-23",
+    "prix": 1.090513
    },
    "bce": {
-    "date": "2026-11-16",
-    "prix": 1.1014
+    "date": "2026-11-23",
+    "prix": 1.0939
    }
   }
  }
